@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.stats-container {
+  display: flex;
+  justify-content: space-around; /* Evenly space the stat blocks */
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+  margin-bottom: 20px; /* Space below the container for separation */
+}
+
+.stat-block {
+  flex: 1 1 160px; /* Flex basis of 160px but allow grow and shrink */
+  text-align: center; /* Centers the text within each stat block */
+}
+
+.progress-container {
+  width: 90%; /* Set the width of the progress bar container */
+  margin: 20px auto; /* Center the container horizontally and add some vertical spacing */
+  position: relative; /* Ensures that the absolute positioning of children is relative to this container */
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #262335; /* Adjust as needed to ensure visibility */
+  font-weight: bold;
+  transform: translateY(-50%); /* Adjusts the text to be exactly centered vertically */
+}
+
+@media (max-width: 600px) {
+  .stat-block {
+    flex-basis: 100%; /* Full width blocks for very small screens */
+  }
+}
